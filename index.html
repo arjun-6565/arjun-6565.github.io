@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cups and Stories - Online Menu</title>
+    <!-- Favicon - a placeholder icon with coffee cup -->
+    <link rel="icon" href="https://placehold.co/32x32/8B4513/ffffff?text=☕">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fdfaf6; /* A warm, creamy background */
+            color: #374151; /* Dark gray text */
+        }
+        .main-container {
+            background-color: #ffffff; /* White background for the content area */
+            border-radius: 1.5rem; /* More rounded corners */
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* Stronger, softer shadow */
+        }
+        .header-title {
+            font-family: 'Playfair Display', serif; /* A more elegant font for the title */
+            @apply text-6xl md:text-7xl font-extrabold text-amber-900 mb-4 tracking-tight;
+            /* Subtle animation for the title */
+            animation: fadeInDown 1s ease-out;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .menu-category-title {
+            @apply text-3xl md:text-4xl font-bold text-white mb-6 p-4 rounded-xl shadow-lg text-center tracking-wide;
+            background-image: linear-gradient(to right, #8B4513, #693417); /* Rich brown gradient */
+            border: 1px solid rgba(255,255,255,0.2); /* Subtle border for depth */
+        }
+        .menu-item {
+            @apply flex justify-between items-center bg-amber-50 p-4 rounded-lg shadow-md mb-3 transition duration-300 ease-in-out transform hover:scale-102 hover:shadow-lg;
+            border: 1px solid #dcdcdc; /* Light border for definition */
+        }
+        .menu-item-name {
+            @apply text-lg md:text-xl font-medium text-gray-800;
+        }
+        .menu-item-price {
+            @apply text-lg md:text-xl font-semibold text-amber-700; /* Amber for prices */
+        }
+        .section-separator {
+            @apply my-10 border-t-2 border-dashed border-amber-300; /* Amber dashed line */
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+    <div class="max-w-4xl mx-auto main-container p-6 md:p-10 mb-10">
+        <!-- Header Section -->
+        <header class="text-center mb-12">
+            <h1 class="header-title">
+                Cups and Stories
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-700 font-light italic">
+                Where every sip tells a tale, and every bite is a chapter.
+            </p>
+            <p class="text-lg text-gray-500 mt-3">
+                Explore our delightful menu, crafted with passion.
+            </p>
+        </header>
+
+        <!-- Milkshakes Section -->
+        <section class="mb-12">
+            <h2 class="menu-category-title">MILK SHAKES</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="menu-item">
+                    <span class="menu-item-name">BANANA SHAKE</span>
+                    <span class="menu-item-price">₹40</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">MUSKMELON SHAKE</span>
+                    <span class="menu-item-price">₹50</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">APPLE SHAKE</span>
+                    <span class="menu-item-price">₹60</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">PINEAPPLE SHAKE</span>
+                    <span class="menu-item-price">₹60</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">POMEGRANATE SHAKE</span>
+                    <span class="menu-item-price">₹60</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">BUTTER FRUIT SHAKE</span>
+                    <span class="menu-item-price">₹60</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">CHIKKU SHAKE</span>
+                    <span class="menu-item-price">₹60</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">MANGO SHAKE</span>
+                    <span class="menu-item-price">₹60</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">PAPAYA SHAKE</span>
+                    <span class="menu-item-price">₹60</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ice Milkshakes Section -->
+        <section class="mb-12">
+            <h2 class="menu-category-title">ICE MILKSHAKES</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="menu-item">
+                    <span class="menu-item-name">VANILLA SHAKE</span>
+                    <span class="menu-item-price">₹50</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">STRAWBERRY SHAKE</span>
+                    <span class="menu-item-price">₹60</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">CHOCOLATE SHAKE</span>
+                    <span class="menu-item-price">₹60</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">OREO SHAKE</span>
+                    <span class="menu-item-price">₹60</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">KITKAT SHAKE</span>
+                    <span class="menu-item-price">₹60</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">BUTTERSCOTCH SHAKE</span>
+                    <span class="menu-item-price">₹60</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">ROSE SHAKE</span>
+                    <span class="menu-item-price">₹60</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fresh Juice Section -->
+        <section class="mb-12">
+            <h2 class="menu-category-title">FRESH JUICE</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="menu-item">
+                    <span class="menu-item-name">LIME JUICE</span>
+                    <span class="menu-item-price">₹30</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">WATERMELON JUICE</span>
+                    <span class="menu-item-price">₹40</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">MOOSAMBI JUICE</span>
+                    <span class="menu-item-price">₹50</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">ORANGE JUICE</span>
+                    <span class="menu-item-price">₹60</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">APPLE JUICE</span>
+                    <span class="menu-item-price">₹60</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">POMEGRANATE JUICE</span>
+                    <span class="menu-item-price">₹60</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">PINEAPPLE JUICE</span>
+                    <span class="menu-item-price">₹60</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Soda Section -->
+        <section class="mb-12">
+            <h2 class="menu-category-title">SODA</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="menu-item">
+                    <span class="menu-item-name">LIME SODA SWEET</span>
+                    <span class="menu-item-price">₹30</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">LIME SODA SALT</span>
+                    <span class="menu-item-price">₹30</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">LIME SODA SWEET & SALT</span>
+                    <span class="menu-item-price">₹35</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">LIME MASALA SODA</span>
+                    <span class="menu-item-price">₹40</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">MINT SODA</span>
+                    <span class="menu-item-price">₹40</span>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-separator">
+
+        <!-- Maggi Section -->
+        <section class="mb-12">
+            <h2 class="menu-category-title">MAGGI</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="menu-item">
+                    <span class="menu-item-name">PLAIN MAGGI</span>
+                    <span class="menu-item-price">₹40</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">MASALA MAGGI</span>
+                    <span class="menu-item-price">₹50</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">EGG MAGGI</span>
+                    <span class="menu-item-price">₹50</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">VEG MAGGI</span>
+                    <span class="menu-item-price">₹50</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">CORN MAGGI</span>
+                    <span class="menu-item-price">₹50</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">DOUBLE EGG MAGGI</span>
+                    <span class="menu-item-price">₹60</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">PLAIN CHEESE MAGGI</span>
+                    <span class="menu-item-price">₹60</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">VEG CHEESE MAGGI</span>
+                    <span class="menu-item-price">₹70</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">CORN CHEESE MAGGI</span>
+                    <span class="menu-item-price">₹70</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">PANEER MAGGI</span>
+                    <span class="menu-item-price">₹80</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">PANEER CHEESE MAGGI</span>
+                    <span class="menu-item-price">₹90</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">CHICKEN MAGGI</span>
+                    <span class="menu-item-price">₹90</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grilled Sandwich Section -->
+        <section class="mb-12">
+            <h2 class="menu-category-title">GRILLED SANDWICH</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="menu-item">
+                    <span class="menu-item-name">VEG SANDWICH</span>
+                    <span class="menu-item-price">₹50</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">MUSHROOM SANDWICH</span>
+                    <span class="menu-item-price">₹50</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">VEG CHEESE SANDWICH</span>
+                    <span class="menu-item-price">₹60</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">MUSHROOM CHEESE SANDWICH</span>
+                    <span class="menu-item-price">₹60</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">CORN SANDWICH</span>
+                    <span class="menu-item-price">₹60</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">CORN CHEESE SANDWICH</span>
+                    <span class="menu-item-price">₹70</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">EGG SANDWICH</span>
+                    <span class="menu-item-price">₹60</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">EGG CHEESE SANDWICH</span>
+                    <span class="menu-item-price">₹70</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">PANEER SANDWICH</span>
+                    <span class="menu-item-price">₹80</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">PANEER CHEESE SANDWICH</span>
+                    <span class="menu-item-price">₹90</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">CHICKEN SANDWICH</span>
+                    <span class="menu-item-price">₹90</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">CHICKEN CHEESE SANDWICH</span>
+                    <span class="menu-item-price">₹100</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Snacks Section -->
+        <section class="mb-12">
+            <h2 class="menu-category-title">SNACKS</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="menu-item">
+                    <span class="menu-item-name">OMLETTE</span>
+                    <span class="menu-item-price">₹20</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">DOUBLE OMLETTE</span>
+                    <span class="menu-item-price">₹30</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">BREAD JAM</span>
+                    <span class="menu-item-price">₹20</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">BREAD BUTTER JAM</span>
+                    <span class="menu-item-price">₹25</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">BREAD PEANUT BUTTER</span>
+                    <span class="menu-item-price">₹30</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">BUN JAM</span>
+                    <span class="menu-item-price">₹30</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">BUN MASKA</span>
+                    <span class="menu-item-price">₹35</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">CHOCO BUN</span>
+                    <span class="menu-item-price">₹40</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">BREAD OMLETTE</span>
+                    <span class="menu-item-price">₹40</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">DOUBLE BREAD OMLETTE</span>
+                    <span class="menu-item-price">₹50</span>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-separator">
+
+        <!-- Nepali Momos Section -->
+        <section class="mb-12">
+            <h2 class="menu-category-title">NEPALI MOMOS</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="menu-item">
+                    <span class="menu-item-name">VEG MOMO</span>
+                    <span class="menu-item-price">₹60</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">VEG FRIED MOMO</span>
+                    <span class="menu-item-price">₹80</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">CHICKEN MOMO</span>
+                    <span class="menu-item-price">₹80</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">CHICKEN FRIED MOMO</span>
+                    <span class="menu-item-price">₹100</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">PANEER MOMO</span>
+                    <span class="menu-item-price">₹80</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">PANEER FRIED MOMO</span>
+                    <span class="menu-item-price">₹100</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">VEG CHILLY MOMO</span>
+                    <span class="menu-item-price">₹100</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">CHICKEN CHILLY MOMO</span>
+                    <span class="menu-item-price">₹120</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">PANEER CHILLY MOMO</span>
+                    <span class="menu-item-price">₹120</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">VEG CHEESE MOMO</span>
+                    <span class="menu-item-price">₹100</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">CHICKEN CHEESE MOMO</span>
+                    <span class="menu-item-price">₹120</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">PANEER CHEESE MOMO</span>
+                    <span class="menu-item-price">₹120</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chai Section -->
+        <section class="mb-12">
+            <h2 class="menu-category-title">CHAI</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="menu-item">
+                    <span class="menu-item-name">TEA</span>
+                    <span class="menu-item-price">₹15</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">BLACK TEA</span>
+                    <span class="menu-item-price">₹15</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">GINGER TEA</span>
+                    <span class="menu-item-price">₹20</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">LEMON TEA</span>
+                    <span class="menu-item-price">₹20</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">LEMON HONEY TEA</span>
+                    <span class="menu-item-price">₹25</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">LEMON GINGER TEA</span>
+                    <span class="menu-item-price">₹25</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">MASALA TEA</span>
+                    <span class="menu-item-price">₹25</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">ELACHI TEA</span>
+                    <span class="menu-item-price">₹25</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">LEMON HONEY GINGER TEA</span>
+                    <span class="menu-item-price">₹30</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">GINGER ELACHI TEA</span>
+                    <span class="menu-item-price">₹30</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hot Coffee Section -->
+        <section class="mb-12">
+            <h2 class="menu-category-title">HOT COFFEE</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="menu-item">
+                    <span class="menu-item-name">HOT COFFEE</span>
+                    <span class="menu-item-price">₹20</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">BLACK COFFEE</span>
+                    <span class="menu-item-price">₹20</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">STRONG COFFEE</span>
+                    <span class="menu-item-price">₹25</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">CHOCOLATE HOT COFFEE</span>
+                    <span class="menu-item-price">₹30</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Milk Section -->
+        <section class="mb-12">
+            <h2 class="menu-category-title">MILK</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="menu-item">
+                    <span class="menu-item-name">PLAIN MILK</span>
+                    <span class="menu-item-price">₹20</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">ROSE MILK</span>
+                    <span class="menu-item-price">₹20</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">BOOST</span>
+                    <span class="menu-item-price">₹20</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">HORLICKS</span>
+                    <span class="menu-item-price">₹20</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">BOURNVITA</span>
+                    <span class="menu-item-price">₹20</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">COLD BOOST</span>
+                    <span class="menu-item-price">₹69</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">COLD HORLICKS</span>
+                    <span class="menu-item-price">₹69</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">COLD BOURNVITA</span>
+                    <span class="menu-item-price">₹69</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cold Coffee Section -->
+        <section class="mb-12">
+            <h2 class="menu-category-title">COLD COFFEE</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="menu-item">
+                    <span class="menu-item-name">PLAIN COLD COFFEE</span>
+                    <span class="menu-item-price">₹70</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">CHOCO COLD COFFEE</span>
+                    <span class="menu-item-price">₹90</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">STRONG COLD COFFEE</span>
+                    <span class="menu-item-price">₹100</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">COLD COFFEE WITH ICECREAM</span>
+                    <span class="menu-item-price">₹120</span>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-separator">
+
+        <!-- Mojito Section -->
+        <section class="mb-12">
+            <h2 class="menu-category-title">MOJITO</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="menu-item">
+                    <span class="menu-item-name">WATERMELON MOJITO</span>
+                    <span class="menu-item-price">₹69</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">GREEN APPLE MOJITO</span>
+                    <span class="menu-item-price">₹69</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">MINT MOJITO</span>
+                    <span class="menu-item-price">₹69</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">BLUE BERRY MOJITO</span>
+                    <span class="menu-item-price">₹69</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">BLUE CURACAO MOJITO</span>
+                    <span class="menu-item-price">₹69</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">PEACH MINT MOJITO</span>
+                    <span class="menu-item-price">₹69</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rolls Section -->
+        <section class="mb-12">
+            <h2 class="menu-category-title">ROLLS</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="menu-item">
+                    <span class="menu-item-name">Veg Roll</span>
+                    <span class="menu-item-price">₹50</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Egg Roll</span>
+                    <span class="menu-item-price">₹50</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Double Egg Roll</span>
+                    <span class="menu-item-price">₹60</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Paneer Roll</span>
+                    <span class="menu-item-price">₹80</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Chicken Roll</span>
+                    <span class="menu-item-price">₹80</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Chicken Egg Roll</span>
+                    <span class="menu-item-price">₹90</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Double Egg Chicken Roll</span>
+                    <span class="menu-item-price">₹100</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Double Chicken Roll</span>
+                    <span class="menu-item-price">₹100</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fried Frozen Snacks Section -->
+        <section class="mb-12">
+            <h2 class="menu-category-title">FRIED FROZEN SNACKS</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="menu-item">
+                    <span class="menu-item-name">French Fries</span>
+                    <span class="menu-item-price">₹70</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">French Fries Peri Peri</span>
+                    <span class="menu-item-price">₹80</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Veg Cheese Nuggets</span>
+                    <span class="menu-item-price">₹80</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Veg Nuggets</span>
+                    <span class="menu-item-price">₹80</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Veg Cheese Shots</span>
+                    <span class="menu-item-price">₹90</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Chicken Popcorn</span>
+                    <span class="menu-item-price">₹100</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Chicken Nuggets</span>
+                    <span class="menu-item-price">₹100</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Chicken Garlic Fingers</span>
+                    <span class="menu-item-price">₹100</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Chicken Fingers</span>
+                    <span class="menu-item-price">₹100</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Chicken Cheese Balls</span>
+                    <span class="menu-item-price">₹120</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Burger Section -->
+        <section class="mb-12">
+            <h2 class="menu-category-title">BURGER</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="menu-item">
+                    <span class="menu-item-name">Veg Burger</span>
+                    <span class="menu-item-price">₹79</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Veg Cheese Burger</span>
+                    <span class="menu-item-price">₹89</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Paneer Burger</span>
+                    <span class="menu-item-price">₹99</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Paneer Cheese Burger</span>
+                    <span class="menu-item-price">₹109</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Chicken Burger</span>
+                    <span class="menu-item-price">₹99</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Chicken Cheese Burger</span>
+                    <span class="menu-item-price">₹109</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fruit Bowls Section -->
+        <section class="mb-12">
+            <h2 class="menu-category-title">FRUIT BOWLS</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="menu-item">
+                    <span class="menu-item-name">WATERMELON</span>
+                    <span class="menu-item-price">₹30</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">MUSKMELON</span>
+                    <span class="menu-item-price">₹40</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">PINEAPPLE</span>
+                    <span class="menu-item-price">₹40</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">MIXED FRUIT</span>
+                    <span class="menu-item-price">₹60</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">MIXED FRUIT ICECREAM</span>
+                    <span class="menu-item-price">₹90</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Starters Section -->
+        <section class="mb-12">
+            <h2 class="menu-category-title">STARTERS</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="menu-item">
+                    <span class="menu-item-name">Veg Noodles</span>
+                    <span class="menu-item-price">₹60</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Egg Noodles</span>
+                    <span class="menu-item-price">₹70</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Chicken Noodles</span>
+                    <span class="menu-item-price">₹80</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Paneer Noodles</span>
+                    <span class="menu-item-price">₹80</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Veg Fried Rice</span>
+                    <span class="menu-item-price">₹50</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Egg Fried Rice</span>
+                    <span class="menu-item-price">₹60</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Double Egg Fried Rice</span>
+                    <span class="menu-item-price">₹70</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Chicken Fried Rice</span>
+                    <span class="menu-item-price">₹80</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Paneer Fried Rice</span>
+                    <span class="menu-item-price">₹80</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Mushroom Fried Rice</span>
+                    <span class="menu-item-price">₹70</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Veg Manchurian</span>
+                    <span class="menu-item-price">₹60</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Paneer Chilli</span>
+                    <span class="menu-item-price">₹80</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Chicken Chilli</span>
+                    <span class="menu-item-price">₹80</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pastas Section -->
+        <section class="mb-12">
+            <h2 class="menu-category-title">PASTAS</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="menu-item">
+                    <span class="menu-item-name">MIX VEG PASTA</span>
+                    <span class="menu-item-price">₹120</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">ITALIAN PASTA</span>
+                    <span class="menu-item-price">₹120</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">TOMATO PASTA</span>
+                    <span class="menu-item-price">₹120</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">CHEESE MACARONI PASTA</span>
+                    <span class="menu-item-price">₹120</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="text-center text-gray-500 text-sm mt-10">
+            <p>&copy; 2025 Cups and Stories. All rights reserved.</p>
+            <p>Prices are subject to change without prior notice.</p>
+        </footer>
+    </div>
+</body>
+</html>
