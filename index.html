@@ -301,18 +301,18 @@
 
     // Call the render function when the page loads
     window.onload = renderMenu;
-			function toggleDropdown(id) {
-		  const content = document.getElementById(id);
-		  const icon = document.getElementById(`${id}-icon`);
-		  
-		  if (content.classList.contains('hidden')) {
-			content.classList.remove('hidden');
-			icon.classList.add('rotate-180');
-		  } else {
-			content.classList.add('hidden');
-			icon.classList.remove('rotate-180');
-		  }
-		}
+	function toggleDropdown(id) {
+	  const content = document.getElementById(id);
+	  const icon = document.getElementById(`${id}-icon`);
+	  
+	  if (content.classList.contains('hidden')) {
+		content.classList.remove('hidden');
+		icon.classList.add('rotate-180');
+	  } else {
+		content.classList.add('hidden');
+		icon.classList.remove('rotate-180');
+	  }
+	}
 
   </script>
 </body>
