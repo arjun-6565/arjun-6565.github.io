@@ -234,54 +234,86 @@
     };
 
     // Function to render the menu
-    function renderMenu() {
-      const container = document.getElementById('menu-container');
-      container.innerHTML = ''; // Clear placeholder text
+		function renderMenu() {
+		  const container = document.getElementById('menu-container');
+		  container.innerHTML = '';
 
-      // Define subcategories to be bold
-      const boldSubcategories = [
-		'Milk Shakes', 'Ice Milkshakes', 'Fresh Juices', 'Soda', 'Chai',
-		'Hot Coffee', 'Milk', 'Cold Coffee', 'Mojito',
-		'Grilled Sandwich', 'Snacks', 'Nepali Momos', 'Rolls', 'Fried Frozen Snacks',
-		'Maggi Specials', 'Fruit Bowls', 'Starters', 'Pastas'
-		];
+		  const boldSubcategories = [
+			'Milk Shakes', 'Ice Milkshakes', 'Fresh Juices', 'Soda', 'Chai',
+			'Hot Coffee', 'Milk', 'Cold Coffee', 'Mojito',
+			'Grilled Sandwich', 'Snacks', 'Nepali Momos', 'Rolls', 'Fried Frozen Snacks',
+			'Maggi Specials', 'Fruit Bowls', 'Starters', 'Pastas'
+		  ];
 
-      for (const category in menu) {
-        // Create category heading
-        const categoryDiv = document.createElement('div');
-        categoryDiv.className = 'mb-8';
-        categoryDiv.innerHTML = `<h3 class="text-2xl font-semibold text-amber-800 mb-4">${category}</h3>`;
+		  for (const category in menu) {
+			const categoryDiv = document.createElement('div');
+			categoryDiv.className = 'mb-8';
+			categoryDiv.innerHTML = `<h3 class="text-2xl font-semibold text-amber-800 mb-4">${category}</h3>`;
 
-        // Create subcategories
-        for (const subcategory in menu[category]) {
-          const subcategoryDiv = document.createElement('div');
-          subcategoryDiv.className = 'mb-6';
-          // Apply bold class if subcategory is in boldSubcategories
-          const isBold = boldSubcategories.includes(subcategory);
-          subcategoryDiv.innerHTML = `<h4 class="text-xl ${isBold ? 'font-bold' : 'font-medium'} text-gray-700 mb-3">${subcategory}</h4>`;
+			for (const subcategory in menu[category]) {
+			  const subcategoryId = `${category}-${subcategory}`.replace(/\s+/g, '-').toLowerCase();
 
-          // Create items list
-          const itemsList = document.createElement('div');
-          itemsList.className = 'grid grid-cols-1 md:grid-cols-2 gap-4';
-          for (const item in menu[category][subcategory]) {
-            const price = menu[category][subcategory][item];
-            const itemDiv = document.createElement('div');
-            itemDiv.className = 'flex justify-between items-center border-b border-gray-200 py-2';
-            itemDiv.innerHTML = `
-              <span class="text-gray-800">${item}</span>
-              <span class="text-amber-600 font-medium">₹${price}</span>
-            `;
-            itemsList.appendChild(itemDiv);
-          }
-          subcategoryDiv.appendChild(itemsList);
-          categoryDiv.appendChild(subcategoryDiv);
-        }
-        container.appendChild(categoryDiv);
-      }
-    }
+			  const isBold = boldSubcategories.includes(subcategory);
+
+			  const subcategoryDiv = document.createElement('div');
+			  subcategoryDiv.className = 'mb-4 border border-gray-200 rounded-xl overflow-hidden';
+
+			  subcategoryDiv.innerHTML = `
+				<button 
+				  class="w-full text-left px-4 py-3 bg-gray-100 hover:bg-gray-200 transition-all duration-200 flex justify-between items-center ${isBold ? 'font-bold' : 'font-medium'} text-xl text-gray-800"
+				  onclick="toggleDropdown('${subcategoryId}')"
+				>
+				  <span>${subcategory}</span>
+				  <svg class="w-5 h-5 transform transition-transform duration-300" id="${subcategoryId}-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+				  </svg>
+				</button>
+				<div id="${subcategoryId}" class="hidden px-4 pb-4 pt-2">
+				</div>
+			  `;
+
+			  const itemsList = document.createElement('div');
+			  itemsList.className = 'grid grid-cols-1 md:grid-cols-2 gap-4';
+
+			  for (const item in menu[category][subcategory]) {
+				const price = menu[category][subcategory][item];
+				const itemDiv = document.createElement('div');
+				itemDiv.className = 'flex justify-between items-center border-b border-gray-200 py-2';
+				itemDiv.innerHTML = `
+				  <span class="text-gray-800">${item}</span>
+				  <span class="text-amber-600 font-medium">₹${price}</span>
+				`;
+				itemsList.appendChild(itemDiv);
+			  }
+
+			  // Append items into the hidden div
+			  setTimeout(() => {
+				const contentDiv = document.getElementById(subcategoryId);
+				if (contentDiv) contentDiv.appendChild(itemsList);
+			  }, 0);
+
+			  categoryDiv.appendChild(subcategoryDiv);
+			}
+
+			container.appendChild(categoryDiv);
+		  }
+		}
 
     // Call the render function when the page loads
     window.onload = renderMenu;
+			function toggleDropdown(id) {
+		  const content = document.getElementById(id);
+		  const icon = document.getElementById(`${id}-icon`);
+		  
+		  if (content.classList.contains('hidden')) {
+			content.classList.remove('hidden');
+			icon.classList.add('rotate-180');
+		  } else {
+			content.classList.add('hidden');
+			icon.classList.remove('rotate-180');
+		  }
+		}
+
   </script>
 </body>
 </html>
